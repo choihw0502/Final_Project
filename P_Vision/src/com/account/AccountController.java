@@ -16,6 +16,11 @@ public class AccountController implements Controller {
 	public AccountController(String work) {
 		this.work = work;
 	}
+	
+//	test3
+	public AccountController(){
+		
+	}
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
