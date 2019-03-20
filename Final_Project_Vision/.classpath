@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="lib" path="C:/vision_git/Final_Project/common/common/jar/jar/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/vision_git/Final_Project/common/common/jar/jar/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="C:/vision_git/Final_Project/common/common/jar/jar/servlet-api.jar"/>
