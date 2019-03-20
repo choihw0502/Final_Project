@@ -22,7 +22,8 @@ public class AccountController implements Controller {
 		String path = "";
 		if("accountList".equals(work)) {//계좌리스트
 			List<Map<String,Object>> accountList = null;
-			accountList = aLogic.accountList();
+//			test용 1
+//			accountList = aLogic.accountList();
 			req.setAttribute("accountList", accountList);
 			path = "forward:/account/accountList.jsp";
 		}
