@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
+import com.membership.MembershipDao;
 import com.util.MyBatisCommonFactory;
 import com.vo.RecommendVO;
 
@@ -19,6 +20,11 @@ public class RecommendDao {
 	Logger logger = Logger.getLogger(RecommendDao.class);
 	SqlSessionFactory sqlSessionFactory = null;
 	SqlSession sqlSession = null;
+	
+	public RecommendDao() {
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		sqlSession = sqlSessionFactory.openSession();
+	}
 	public List<Map<String, Object>> cardRecommand() {
 		List<Map<String,Object>> cardRecommandList = new ArrayList<Map<String,Object>>();
 		//insert here!!!!
