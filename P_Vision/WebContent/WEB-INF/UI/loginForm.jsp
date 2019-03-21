@@ -80,23 +80,22 @@
     <div class="col s12 z-depth-4 card-panel">
       <form class="login-form">
         <div class="row">
-				<h6><a href="main.jsp"><</a></h6>
-          <div class="input-field col s12 center">
-            <!-- <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login"/> -->
+          <div class="input-field col s1 center">
+				<h5><a href="main.jsp"><</a></h5>
+		  </div>
+          <div class="input-field col s11 center">
             <h6><img src="images/vision.png" id="imagepreview" style="width: 150px; height: 30px">&nbsp;로그인</h6>
           </div>
         </div>
         <div class="row margin">
-          <div class="input-field col s10">
-            <!-- <i class="mdi-social-person-outline prefix"></i> -->
+          <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
-            <input id="username" name="username" type="text" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;"/>
-            <label for="username" data-error="경고" class="center-align" data-success="성공">아이디</label>            
+            <input id="id" name="id" type="text" style=" cursor: auto;"/>
+            <label for="id" data-error="경고" class="center-align" data-success="성공">아이디</label>            
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <!-- <i class="mdi-action-lock-outline prefix"></i> -->
             <i class="material-icons prefix">vpn_key</i>
             <input id="password" name="password" type="password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"/>
             <label for="password" data-error="경고" class="center-align" data-success="성공">비밀번호</label>
@@ -128,7 +127,7 @@
   <script type="text/javascript">
      $(".login-form").validate({
         rules: {
-          username: {
+          id: {
             required: true,
             minlength: 4
           },            
@@ -139,7 +138,7 @@
         },
         //For custom messages
         messages: {
-          username:{
+          id:{
             required: "아이디를 입력하세요.",
             minlength: "4자 이상 입력하세요."
           },
