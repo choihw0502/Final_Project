@@ -12,9 +12,9 @@ public class RewardsLogic {
 		reward_Main = reDao.reward_Main();
 		return reward_Main;
 	}
-	public List<Map<String, Object>> myPoint() {
-		List<Map<String,Object>> myPoint = null;
-		myPoint = reDao.myPoint();
+	public int myPoint(String mem_id) {
+		int myPoint = 0;
+		myPoint = reDao.myPoint(mem_id);
 		return myPoint;
 	}
 	public List<Map<String, Object>> exCoupon() {
