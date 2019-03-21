@@ -4,8 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.card.CardDao;
+import com.util.MyBatisCommonFactory;
+
 public class RewardsDao {
-	List<Map<String,Object>> reMap = new ArrayList<Map<String,Object>>();
+	Logger logger = Logger.getLogger(RewardsDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	public RewardsDao() {
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		sqlSession = sqlSessionFactory.openSession();
+	}
 
 	public List<Map<String, Object>> reward_Main() {
 		//insert here

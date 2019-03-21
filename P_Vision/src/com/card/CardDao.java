@@ -1,26 +1,39 @@
 package com.card;
 
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CardDao {
-	List<Map<String,Object>> cMap = new ArrayList<Map<String,Object>>();
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.log4j.Logger;
 
-	public List<Map<String, Object>> cardList() {
-		Map<String,Object> cardList = new HashMap<String,Object>();
-		cardList.put("c_name", "희상카드");
-		cardList.put("c_picture", "희상이사진");
-		cardList.put("c_detail", "희상이꺼임");
-		cMap.add(cardList);
-		cardList = new HashMap<String,Object>();
-		cardList.put("c_name", "현석카드");
-		cardList.put("c_picture", "현석이사진");
-		cardList.put("c_detail", "현석이꺼임");
-		cMap.add(cardList);
-		
-		return cMap;
+import com.recommend.RecommendDao;
+import com.util.MyBatisCommonFactory;
+import com.vo.CardVO;
+import com.vo.RecommendVO;
+
+public class CardDao {
+	Logger logger = Logger.getLogger(CardDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	
+	public CardDao() {
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		sqlSession = sqlSessionFactory.openSession();
+	}
+	public List<Map<String, Object>> cardList(String mem_id) {
+		List<Map<String, Object>> cardList = new ArrayList<Map<String, Object>>();
+		logger.info("cardList 호출성공");
+		//insert here!!!!
+			CardVO cVO = new CardVO();
+			cardList = sqlSession.selectList("cardList", mem_id);
+			logger.info(cardList.size());
+		return cardList;
 	}
 
 	public List<Map<String, Object>> cardUseList() {

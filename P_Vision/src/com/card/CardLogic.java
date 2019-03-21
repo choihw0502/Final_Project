@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class CardLogic {
 	CardDao cDao = new CardDao();
-	public List<Map<String, Object>> cardList() {//카드리스트
+	public List<Map<String, Object>> cardList(String mem_id) {//카드리스트
 		List<Map<String,Object>> cardList = null;
-		cardList = cDao.cardList();
+		cardList = cDao.cardList(mem_id);
 		return cardList;
 	}
 	public List<Map<String, Object>> cardUseList() {//카드사용내역

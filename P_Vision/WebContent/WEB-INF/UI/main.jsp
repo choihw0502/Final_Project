@@ -15,7 +15,7 @@
 <body>
 	<style type="text/css">
 .jumbotron {
-	background-image: url('images/vision.jpeg');
+	background-image: url('images/vision.gif');
 	background-size: cover;
 	text-shadow: black 0.2em 0.2em 0.2em;
 	color: white;

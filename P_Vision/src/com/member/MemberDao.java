@@ -10,11 +10,18 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
+import com.account.AccountDao;
+import com.util.MyBatisCommonFactory;
+
 public class MemberDao {
 	Logger logger = Logger.getLogger(MemberDao.class);
-	SqlSessionFactory  sqlSessionFactory = null;//드라이버 로딩, 커넥션
-	SqlSession sqlSession = null;//커
-
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	
+	public MemberDao() {
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		sqlSession = sqlSessionFactory.openSession();
+	}
 	public String check_email(String email) {
 		String check = "";
 		//insert 파라미터로 받은 이메일주소로 중복확인 후에 있으면 사용할수없니마니 없으면 사용가능 같은 메시지 출력
