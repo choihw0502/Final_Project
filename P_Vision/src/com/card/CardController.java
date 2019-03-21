@@ -20,9 +20,10 @@ public class CardController implements Controller {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String path = "";
+		String mem_id = (String)req.getParameter("mem_id");
 		if("cardList".equals(work)) {//카드리스트
 			List<Map<String,Object>> cardList = null;
-			cardList = cLogic.cardList();
+			cardList = cLogic.cardList(mem_id);
 			req.setAttribute("cardList", cardList);
 			path = "forward:/card/cardList.jsp";
 		}

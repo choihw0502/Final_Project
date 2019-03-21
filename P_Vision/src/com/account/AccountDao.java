@@ -5,8 +5,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.rewards.RewardsDao;
+import com.util.MyBatisCommonFactory;
+
 public class AccountDao {
-	List<Map<String,Object>> cMap = new ArrayList<Map<String,Object>>();
+	Logger logger = Logger.getLogger(AccountDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	
+	public AccountDao() {
+		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
+		sqlSession = sqlSessionFactory.openSession();
+	}
 	public List<Map<String, Object>> accountList() {
 		List<Map<String,Object>> accountList = new ArrayList<Map<String,Object>>();
 		// TODO Auto-generated method stub
