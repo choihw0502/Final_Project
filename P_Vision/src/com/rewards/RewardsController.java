@@ -20,7 +20,7 @@ public class RewardsController implements Controller {
 	@Override
 	public Object execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String path = "";
-		
+		String mem_id = (String)req.getParameter("mem_id");
 		 if("reward_Main".equals(work)){//리워즈 메인화면
 			List<Map<String,Object>> reward_Main = null;
 			reward_Main =reLogic.reward_Main();
@@ -28,10 +28,10 @@ public class RewardsController implements Controller {
 			path = "forward:/rewards/reward_Main.jsp";
 		}
 		else if("myPoint".equals(work)) {//내포인트
-			List<Map<String,Object>> myPoint = null;
-			myPoint = reLogic.myPoint();
+			int myPoint = 0;
+			myPoint = reLogic.myPoint(mem_id);
 			req.setAttribute("myPoint",myPoint);
-			path = "forward:/rewards/myPoint().jsp";
+			path = "forward:/rewards/myPoint.jsp";
 		}
 		else if("exCoupon".equals(work)) {//쿠폰으로 교환하기
 			List<Map<String,Object>> exCoupon = null;

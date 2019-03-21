@@ -1,15 +1,19 @@
 package com.rewards;
 
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
 import com.card.CardDao;
 import com.util.MyBatisCommonFactory;
+import com.vo.RecommendVO;
 
 public class RewardsDao {
 	Logger logger = Logger.getLogger(RewardsDao.class);
@@ -26,9 +30,13 @@ public class RewardsDao {
 		return reward_Main;
 	}
 
-	public List<Map<String, Object>> myPoint() {
-		//insert here
-		List<Map<String,Object>> myPoint = new ArrayList<Map<String,Object>>();
+	public int myPoint(String mem_id) {
+		
+		int myPoint = 0;
+		logger.info("myPoint 호출성공");
+		
+		myPoint = sqlSession.selectOne("myPoint",mem_id);
+		
 		return myPoint;
 	}
 
