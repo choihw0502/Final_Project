@@ -7,43 +7,18 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.member.MemberDao;
 import com.util.MyBatisCommonFactory;
 
 public class MembershipDao {
 	Logger logger = Logger.getLogger(MembershipDao.class);
-	SqlSessionFactory sqlSessionFactory = null;
-	SqlSession sqlSession = null;
-	
-	public MembershipDao() {
-		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
-		sqlSession = sqlSessionFactory.openSession();
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate = null;
+	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
-	public List<Map<String, Object>> mshipList() {
-		//insert here!!!!
-		
-		List<Map<String,Object>> spendingMonthList = new ArrayList<Map<String,Object>>();
-		return spendingMonthList;
-	}
-	public List<Map<String, Object>> mshipHistory() {
-		//insert here!!!!
-		
-		List<Map<String,Object>> mshipHistory = new ArrayList<Map<String,Object>>();
-		return mshipHistory;
-	}
-	public List<Map<String, Object>> mshipAdd() {
-		//insert here!!!!
-		
-		List<Map<String,Object>> mshipAdd = new ArrayList<Map<String,Object>>();
-		return mshipAdd;
-	}
-	public List<Map<String, Object>> mshipBenefit() {
-		//insert here!!!!
-		
-		List<Map<String,Object>> mshipBenefit = new ArrayList<Map<String,Object>>();
-		return mshipBenefit;
-	}
-
 
 }

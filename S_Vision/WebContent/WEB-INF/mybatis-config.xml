@@ -3,13 +3,14 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="deptVO" type="com.vo.DeptVO"/>
-		<typeAlias alias="empVO" type="com.vo.EmpVO"/>
-		<typeAlias alias="bmVO" type="com.vo.BoardMasterVO"/>
-		<typeAlias alias="bsVO" type="com.vo.BoardSubVO"/>
 	</typeAliases>
 	<mappers>
+		<mapper resource="com/mybatis/mapper/account.xml"/>
+		<mapper resource="com/mybatis/mapper/card.xml"/>
 		<mapper resource="com/mybatis/mapper/member.xml"/>
-		<mapper resource="com/mybatis/mapper/board.xml"/>
+		<mapper resource="com/mybatis/mapper/membership.xml"/>
+		<mapper resource="com/mybatis/mapper/plan.xml"/>
+		<mapper resource="com/mybatis/mapper/recommend.xml"/>
+		<mapper resource="com/mybatis/mapper/rewards.xml"/>
 	</mappers>
 </configuration>

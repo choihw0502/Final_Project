@@ -3,27 +3,15 @@ package com.membership;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
+import com.rewards.RewardsLogic;
+
 public class MembershipLogic {
-	MembershipDao pDao = new MembershipDao();
-
-	public List<Map<String, Object>> mshipList() {
-		// TODO Auto-generated method stub
-		List<Map<String,Object>> mshipList = null;
-		return mshipList;
+	Logger logger = Logger.getLogger(MembershipLogic.class);
+	MembershipDao membershipDao = null;
+	public void setMembershipDao(MembershipDao membershipDao) {
+		this.membershipDao = membershipDao;
 	}
-	public List<Map<String, Object>> mshipHistory() {
-		List<Map<String,Object>> mshipHistory = null;
-		return mshipHistory;
-	}
-	public List<Map<String, Object>> mshipAdd() {
-		List<Map<String,Object>> mshipAdd = null;
-		return mshipAdd;
-	}
-	public List<Map<String, Object>> mshipBenefit() {
-		List<Map<String,Object>> mshipBenefit = null;
-		return mshipBenefit;
-	}
-
-
 
 }

@@ -1,53 +1,35 @@
 package com.member;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.Controller;
+import com.vo.CardVO;
 
-public class MemberController implements Controller {
-	String work = "";
-	MemberLogic mLogic = new MemberLogic();
-	public MemberController(String work) {
-		this.work = work;
+@Controller
+@RequestMapping(value="/member/")
+public class MemberController {
+	Logger logger = Logger.getLogger(MemberController.class);
+	@Autowired
+	MemberLogic memberLogic = null;
+	public void setMemberLogic(MemberLogic memberLogic) {
+		this.memberLogic = memberLogic;
 	}
-
-	@Override
-	public String execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String path = "";
-		if("check_email".equals(work)) {//이메일 중복확인
-			String check_email = req.getParameter("check_email");
-			check_email = mLogic.check_email(check_email);
-			req.setAttribute("check_email", check_email);
-			path = "forward:/member/check_email.jsp";
-		}
-		else if("cert_email".equals(work)) {//이메일 인증
-			String cert_email = req.getParameter("cert_email");
-			cert_email = mLogic.cert_email(cert_email);
-			req.setAttribute("cert_email", cert_email);
-			path = "forward:/member/cert_email.jsp";
-		}
-		else if("find_id".equals(work)) {//아이디 찾기
-			String find_id = req.getParameter("find_id");
-			find_id = mLogic.find_id(find_id);
-			req.setAttribute("find_id", find_id);
-			path = "forward:/member/find_id.jsp";
-		}
-		else if("find_pw".equals(work)) {//비밀번호 재설정
-			String find_pw = req.getParameter("find_pw");
-			find_pw = mLogic.find_pw(find_pw);
-			req.setAttribute("find_pw", find_pw);
-			path = "forward:/member/find_pw.jsp";
-		}
-		else if("register".equals(work)) {//회원가입
-			String register = req.getParameter("register");
-			register = mLogic.register(register);
-			req.setAttribute("register", register);
-			path = "forward:/member/register.jsp";
-		}
-		return path;
-	}
+	//멤버는 나중에 해야댈듯
 }

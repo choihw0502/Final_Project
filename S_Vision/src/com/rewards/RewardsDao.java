@@ -10,6 +10,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.card.CardDao;
 import com.util.MyBatisCommonFactory;
@@ -17,11 +19,10 @@ import com.vo.RecommendVO;
 
 public class RewardsDao {
 	Logger logger = Logger.getLogger(RewardsDao.class);
-	SqlSessionFactory sqlSessionFactory = null;
-	SqlSession sqlSession = null;
-	public RewardsDao() {
-		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
-		sqlSession = sqlSessionFactory.openSession();
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate = null;
+	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
 
 	public List<Map<String, Object>> reward_Main() {
@@ -35,7 +36,7 @@ public class RewardsDao {
 		int myPoint = 0;
 		logger.info("myPoint 호출성공");
 		
-		myPoint = sqlSession.selectOne("myPoint",mem_id);
+		myPoint = sqlSessionTemplate.selectOne("myPoint",mem_id);
 		
 		return myPoint;
 	}

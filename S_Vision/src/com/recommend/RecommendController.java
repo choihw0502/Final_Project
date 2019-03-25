@@ -7,72 +7,118 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.plan.PlanLogic;
-import com.spring.Controller;
+import com.vo.PlanVO;
+import com.vo.RecommendVO;
 
-public class RecommendController implements Controller {
-	RecommendLogic rLogic = new RecommendLogic();
-	String work = "";
-
-	public RecommendController(String work) {
-		this.work = work;
+@Controller
+@RequestMapping(value="/recommend/")
+public class RecommendController {
+	Logger logger = Logger.getLogger(RecommendController.class);
+	@Autowired
+	RecommendLogic recommendLogic = null;
+	public void setRecommendLogic(RecommendLogic recommendLogic) {
+		this.recommendLogic = recommendLogic;
 	}
-
-	@Override
-	public Object execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		 String path = "";
-		 if("cardRecommand".equals(work)){
-			 List<Map<String,Object>> cardRecommand = null;
-			 cardRecommand =rLogic.cardRecommand();
-			req.setAttribute("cardRecommand", cardRecommand);
-			path = "forward:/recommend/cardRecommand.jsp";
-		 }
-		 else if("allCards".equals(work)) {
-			 List<Map<String,Object>> allCards = null;
-			 String id= (String)req.getParameter("id");
-			 allCards = rLogic.allCards(id);
-			 req.setAttribute("allCards", allCards);
-			 path = "forward:/recommend/allCards.jsp";
-		 }
-		 else if("eatCard".equals(work)) {
-			 List<Map<String,Object>> eatCard = null;
-			 eatCard = rLogic.eatCard();
-			 req.setAttribute("eatCard", eatCard);
-			 path = "forward:/recommend/eatCard.jsp";
-		 }
-		 else if("communityCard".equals(work)) {
-			 List<Map<String,Object>> communityCard = null;
-			 communityCard = rLogic.communityCard();
-			 req.setAttribute("communityCard", communityCard);
-			 path = "forward:/recommend/communityCard.jsp";
-		 }
-		 else if("tripCard".equals(work)) {
-			 List<Map<String,Object>> tripCard = null;
-			 tripCard = rLogic.tripCard();
-			 req.setAttribute("tripCard", tripCard);
-			 path = "forward:/recommend/tripCard.jsp";
-		 }
-		 else if("convenCard".equals(work)) {
-			 List<Map<String,Object>> convenCard = null;
-			 convenCard = rLogic.convenCard();
-			 req.setAttribute("convenCard", convenCard);
-			 path = "forward:/recommend/convenCard.jsp";
-		 }
-		 else if("oilCard".equals(work)) {
-			 List<Map<String,Object>> oilCard = null;
-			 oilCard = rLogic.oilCard();
-			 req.setAttribute("oilCard", oilCard);
-			 path = "forward:/recommend/oilCard.jsp";
-		 }
-		 else if("myRecommendCard".equals(work)) {
-			 List<Map<String,Object>> myRecommendCard = null;
-			 myRecommendCard = rLogic.myRecommendCard();
-			 req.setAttribute("myRecommendCard", myRecommendCard);
-			 path = "forward:/recommend/myRecommendCard.jsp";
-		 }
-		 
-		return path;
+	@GetMapping("allCards")
+	public ModelAndView otherUsersSpending(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("allCards", allCards);
+		mav.setViewName("recommend/allCards");
+		return mav;
+	}
+	@GetMapping("eatCard")
+	public ModelAndView eatCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("eatCard", eatCard);
+		mav.setViewName("recommend/eatCard");
+		return mav;
+	}
+	@GetMapping("communityCard")
+	public ModelAndView communityCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("communityCard", communityCard);
+		mav.setViewName("recommend/communityCard");
+		return mav;
+	}
+	@GetMapping("cultureCard")
+	public ModelAndView cultureCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("cultureCard", cultureCard);
+		mav.setViewName("recommend/cultureCard");
+		return mav;
+	}
+	@GetMapping("tripCard")
+	public ModelAndView tripCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("tripCard", tripCard);
+		mav.setViewName("recommend/tripCard");
+		return mav;
+	}
+	@GetMapping("convenCard")
+	public ModelAndView convenCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("convenCard", convenCard);
+		mav.setViewName("recommend/convenCard");
+		return mav;
+	}
+	@GetMapping("oilCard")
+	public ModelAndView oilCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("oilCard", oilCard);
+		mav.setViewName("recommend/oilCard");
+		return mav;
+	}
+	@GetMapping("myRecommendCard")
+	public ModelAndView myRecommendCard(@ModelAttribute RecommendVO recommendVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("myRecommendCard", myRecommendCard);
+		mav.setViewName("recommend/myRecommendCard");
+		return mav;
 	}
 
 }

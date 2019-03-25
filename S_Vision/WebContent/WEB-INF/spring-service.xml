@@ -9,7 +9,25 @@
 						   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 						   http://www.springframework.org/schema/context
 						   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-	<bean id="loginLogic" class="com.mvc.LoginLogic"/>			
-	<bean id="orderlogic" class="com.ch3.OrderLogic"/>			   
-	<bean id="boardLogic" class="com.mvc.BoardLogic"/>			   
+	<bean id="accountLogic" class="com.account.AccountLogic">
+		<property name="accountDao" ref="accountDao"/>
+	</bean>
+	<bean class="com.card.CardLogic" id="cardlogic">
+		<property name="cardDao" ref="cardDao"/>
+	</bean>	
+	<bean class="com.member.MemberLogic" id="memberLogic">
+		<property name="memberDao" ref="memberDao"/>
+	</bean>	
+	<bean class="com.membership.membershipLogic" id="membershipLogic">
+		<property name="membershipDao" ref="membershipDao"/>
+	</bean>	
+	<bean class="com.plan.PlanLogic" id="planLogic">
+		<property name="planDao" ref="planDao"/>
+	</bean>	
+	<bean class="com.recommend.RecommendLogic" id="recommendLogic">
+		<property name="recommendDao" ref="recommendDao"/>
+	</bean>	
+	<bean class="com.rewards.RewardsLogic" id="rewardsLogic">
+		<property name="rewardsDao" ref="rewardsDao"/>
+	</bean>	
 </beans>

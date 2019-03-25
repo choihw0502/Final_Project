@@ -3,16 +3,23 @@ package com.account;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vo.AccountVO;
+
 public class AccountLogic {
-	AccountDao aDao = new AccountDao();
-	public List<Map<String, Object>> accountList() {//계좌리스트
+	@Autowired
+	AccountDao accountDao = null;
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
+	}
+	public List<Map<String, Object>> accountList(AccountVO accountVO) {//계좌리스트
 		List<Map<String,Object>> accountList = null;
-		accountList = aDao.accountList();
+		accountList = accountDao.accountList(accountVO);
 		return accountList;
 	}
-	public List<Map<String, Object>> accountAdd() {//계좌추가
-		List<Map<String,Object>> accountAdd = null;
-		accountAdd = aDao.accountAdd();
+	public int accountAdd(AccountVO accountVO) {
+		int accountAdd = accountDao.accountAdd(accountVO);
 		return accountAdd;
 	}
 	

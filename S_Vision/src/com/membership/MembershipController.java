@@ -7,45 +7,73 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.Controller;
+import com.vo.CardVO;
+import com.vo.MembershipVO;
 
-public class MembershipController implements Controller {
-	MembershipLogic msLogic = new MembershipLogic();
-	String work = "";
-	public MembershipController(String work) {
-		this.work = work;
+@Controller
+@RequestMapping(value="/membership/")
+public class MembershipController {
+	Logger logger = Logger.getLogger(MembershipController.class);
+	@Autowired
+	MembershipLogic membershipLogic = null;
+	public void setMembershipLogic(MembershipLogic membershipLogic) {
+		this.membershipLogic = membershipLogic;
 	}
-
-	@Override
-	public Object execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String path = "";
+	@GetMapping("mshipList")
+	public ModelAndView mshipList(@ModelAttribute MembershipVO membershipVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
 		
-		 if("mshipList".equals(work)){//멤버쉽리스트
-			List<Map<String,Object>> mshipList = null;
-			mshipList =msLogic.mshipList();
-			req.setAttribute("mshipList", mshipList);
-			path = "forward:/membership/mshipList.jsp";
-		}
-		else if("mshipHistory".equals(work)) {//멤버쉽적립내역
-			List<Map<String,Object>> mshipHistory = null;
-			mshipHistory = msLogic.mshipHistory();
-			req.setAttribute("mshipHistory",mshipHistory);
-			path = "forward:/membership/mshipHistory.jsp";
-		}
-		else if("mshipAdd".equals(work)) {//멤버쉽추가
-			List<Map<String,Object>> mshipAdd = null;
-			mshipAdd = msLogic.mshipAdd();
-			req.setAttribute("mshipAdd", mshipAdd);
-			path = path = "forward:/membership/mshipAdd.jsp";
-		}
-		else if("mshipBenefit".equals(work)){//멤버쉽혜택확인
-			List<Map<String,Object>> mshipBenefit = null;
-			mshipBenefit = msLogic.mshipBenefit();
-			req.setAttribute("mshipBenefit", mshipBenefit);
-			path = "forward:/membership/mshipBenefit.jsp";
-		}
-		return path;
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mshipList", mshipList);
+		mav.setViewName("membership/mshipList");
+		return mav;
 	}
-
+	@GetMapping("mshipHistory")
+	public ModelAndView mshipHistory(@ModelAttribute MembershipVO membershipVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mshipHistory", mshipHistory);
+		mav.setViewName("membership/mshipHistory");
+		return mav;
+	}
+	@GetMapping("mshipAdd")
+	public ModelAndView mshipAdd(@ModelAttribute MembershipVO membershipVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mshipAdd", mshipAdd);
+		mav.setViewName("membership/mshipAdd");
+		return mav;
+	}
+	@GetMapping("mshipBenefit")
+	public ModelAndView mshipBenefit(@ModelAttribute MembershipVO membershipVO, Model model, HttpServletRequest req) throws ServletException, IOException {
+		//insert here
+		//메소드이름으로 알맞게 타입정하고		
+		//메소드이름=로직.같은이름메소드(VO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mshipBenefit", mshipBenefit);
+		mav.setViewName("membership/mshipBenefit");
+		return mav;
+	}
 }

@@ -17,22 +17,34 @@
 			<value>oracle.jdbc.driver.OracleDriver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:oracle:thin:@192.168.0.22:1521:orcl11</value>
+			<value>jdbc:oracle:thin:@192.168.0.9:1521:orcl11</value>
 		</property>
 		<property name="username">
-			<value>scott</value>
+			<value>vision</value>
 		</property>
 		<property name="password">
 			<value>tiger</value>
 		</property>
 	</bean>
-	<bean id="boardMasterDao" class="com.mvc.BoardMasterDao">
+	<bean id="accountDao" class="com.account.AccountDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
-	<bean id="boardSubDao" class="com.mvc.BoardSubDao">
+	<bean id="cardDao" class="com.card.CardDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
-	<bean id="loginDao" class="com.mvc.LoginDao">
+	<bean id="memberDao" class="com.member.MemberDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	<bean id="membershipDao" class="com.membership.MembershipDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	<bean id="planDao" class="com.plan.PlanDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	<bean id="recommendDao" class="com.recommend.RecommendDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	<bean id="rewardsDao" class="com.rewards.RewardsDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	<!-- 

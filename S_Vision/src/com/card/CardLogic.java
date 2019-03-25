@@ -3,22 +3,17 @@ package com.card;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.member.MemberLogic;
+
 public class CardLogic {
-	CardDao cDao = new CardDao();
-	public List<Map<String, Object>> cardList(String mem_id) {//카드리스트
-		List<Map<String,Object>> cardList = null;
-		cardList = cDao.cardList(mem_id);
-		return cardList;
-	}
-	public List<Map<String, Object>> cardUseList() {//카드사용내역
-		List<Map<String,Object>> cardUseList = null;
-		cardUseList = cDao.cardUseList();
-		return cardUseList;
-	}
-	public List<Map<String, Object>> cardAdd() {//카드추가
-		List<Map<String,Object>> cardAdd = null;
-		cardAdd = cDao.cardAdd();
-		return cardAdd;
+	Logger logger = Logger.getLogger(CardLogic.class);
+	@Autowired
+	CardDao cardDao = null;
+	public void setCardDao(CardDao cardDao) {
+		this.cardDao = cardDao;
 	}
 	
 

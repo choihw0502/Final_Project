@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.recommend.RecommendDao;
 import com.util.MyBatisCommonFactory;
@@ -19,36 +21,10 @@ import com.vo.RecommendVO;
 
 public class CardDao {
 	Logger logger = Logger.getLogger(CardDao.class);
-	SqlSessionFactory sqlSessionFactory = null;
-	SqlSession sqlSession = null;
-	
-	public CardDao() {
-		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
-		sqlSession = sqlSessionFactory.openSession();
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate = null;
+	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+		this.sqlSessionTemplate = sqlSessionTemplate;
 	}
-	public List<Map<String, Object>> cardList(String mem_id) {
-		List<Map<String, Object>> cardList = new ArrayList<Map<String, Object>>();
-		logger.info("cardList 호출성공");
-		//insert here!!!!
-			CardVO cVO = new CardVO();
-			cardList = sqlSession.selectList("cardList", mem_id);
-			logger.info(cardList.size());
-		return cardList;
-	}
-
-	public List<Map<String, Object>> cardUseList() {
-		List<Map<String,Object>> cardUseList = new ArrayList<Map<String,Object>>();
-		//insert here
-		
-		return cardUseList;
-	}
-
-	public List<Map<String, Object>> cardAdd() {
-		List<Map<String,Object>> cardAdd = new ArrayList<Map<String,Object>>();
-		//insert here
-		
-		return cardAdd;
-	}
-
 
 }
