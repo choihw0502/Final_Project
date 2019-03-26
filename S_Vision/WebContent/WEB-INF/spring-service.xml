@@ -20,5 +20,14 @@
 	</bean>
 	<bean id="rewardsLogic" class="com.rewards.RewardsLogic">
 		<property name="rewardsDao" ref="rewardsDao"/>
-	</bean>					
+	</bean>	
+	<bean id="recommendLogic" class="com.recommend.RecommendLogic">
+		<property name="recommendDao" ref="recommendDao"/>
+	</bean>	
+	<bean id="membershipLogic" class="com.membership.MembershipLogic">
+		<property name="membershipDao" ref="membershipDao"/>
+	</bean>
+	<bean id="planLogic" class="com.plan.PlanLogic">
+		<property name="planDao" ref="planDao"/>
+	</bean>										
 </beans>
