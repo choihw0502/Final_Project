@@ -8,12 +8,12 @@
 <meta charset="UTF-8">
 <mata name="viewport" content="width=device-width" , inital-scale="1">
 <head>
-<title>메인(로그아웃) 페이지</title>
+<title>메인(로그인) 페이지</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bin.css">
 </head>
 <body>
-<style type="text/css">
+	<!-- <style type="text/css">
 .jumbotron {
 	background-image: url('images/vision.gif');
 	background-size: cover;
@@ -22,7 +22,7 @@
 	width: 380px;
 	height: 200px;	
 }
-</style>
+</style> -->
 	<!-- 네비게이션 바 시작 -->
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -34,7 +34,7 @@
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main.jsp">
+				<a class="navbar-brand" href="main2.jsp">
 					<img src="images/vision_pay.png" id="imagepreview" style="width: 150px; height: 30px">
 				</a>
 			</div>
@@ -43,33 +43,33 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navber-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="main.jsp">VISION PAY 소개 
+					<!-- <li class="active">
+						<a href="visionpay.jsp">VISION PAY 소개 
 							<span class="sr-only"></span>
 						</a>
-					</li>
-					<li><a href="crew.jsp">VISION 팀원 소개</a></li>
-				<!-- 	<li class="dropdown">
+					</li> -->
+<!-- 				<li><a href="crew.jsp">VISION 팀원 소개</a></li> -->
+					<li class="dropdown">
 						<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VISION PAY 기능
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="cardList.jsp"><img src="images/cardList.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;카드</a></li>
+							<li><a href="cardList.jsp"><img src="images/card.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;카드</a></li>
 							<li><a href="account.jsp"><img src="images/account.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;계좌</a></li>
 							<li><a href="membership.jsp"><img src="images/membership.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;멤버쉽</a></li>
-							<li><a href="planner.jsp"><img src="images/planner.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;플레너</a></li>
+							<li><a href="plannerMain.jsp"><img src="images/planner.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;플레너</a></li>
 							<li><a href="cardRecommend.jsp"><img src="images/cardRecommend.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;카드 추천</a></li>
 							<li><a href="reward.jsp"><img src="images/reward.png" id="imagepreview" style="width: 30px; height: 20px">&nbsp;&nbsp;리워즈</a></li>
 						</ul>
-					</li> -->
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: black;">
 							<img src="images/login.png" style="width: 20px; height: 20px"><span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="loginForm.jsp">로그인</a></li>
-							<li><a href="register.jsp">회원가입</a></li>
+							<li><a href="#">내계정</a></li>
+							<li><a href="main.jsp">로그아웃</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -89,23 +89,24 @@
 	<!-- 네비게이션 바 끝 -->
 	<!-- 메인 화면 시작 -->
 	<div class="container">
-		<!-- 점보트론 시작 -->
-		<div class="jumbotron">
-			<p class="text-center">
-				<a><IMG SRC="images/vision_pay.png" ID="IMAGEPREVIEW" style="width: 200px; height: 40px"></a>
+<!--	점보트론 시작
+		<div class="jumbotron"  >
+			<br><br><br>
+			<p class="text-center" >
+			<a ><IMG SRC="images/vision_pay.png" ID="IMAGEPREVIEW" style="width: 600px; height: 120px"></a>
 			</p>
-			<p class="text-center">스마트한 당신의 지갑 경험해 보세요.</p>
+			<p class="text-center">스마트한 당신의 지갑</p>
 			<p class="text-center">
 				<a class="btn btn-primary btn-lg" href="" role="button" style="background-color: black;">상세 소개</a>
 			</p>
 		</div>
-		<!-- 점보트론 끝 -->
-<!-- 		<div class="row">
+		점보트론 끝 -->
+		<div class="row">
 			<div class="col-md-4">
 				<h2>플래너</h2>
-				캐러셀 시작
+				<!-- 캐러셀 시작 -->
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					Indicators
+					<!-- Indicators -->
 					<ol class="carousel-indicators">
 						<li data-target="#myCarousel" data-slide-to="0"
 							style="background-color: bbbbbb"></li>
@@ -120,7 +121,7 @@
 						<li data-target="#myCarousel" data-slide-to="5"
 							style="background-color: bbbbbb"></li>
 					</ol>
-					Wrapper for slides
+					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<img src="images/1.png">
@@ -141,7 +142,7 @@
 							<img src="images/6.png">
 						</div>
 					</div>
-					Left and right controls
+					<!-- Left and right controls -->
 					<a class="left carousel-control" href="#myCarousel" role="button"
 						data-slide="prev"> <span
 						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -160,7 +161,7 @@
 					</a>
 				</p>
 			</div>
-			캐러셀 끝
+			<!-- 캐러셀 끝 -->
 			<div class="col-md-4">
 				<h2>지갑</h2>
 				<p>
@@ -182,7 +183,7 @@
 					<a class="btn btn-default btn-lg" href="pointSave.jsp">적립하기</a>
 				</p>
 			</div>
-		</div> -->
+		</div>
 		<hr>
 	</div>
 	<!-- 메인 화면 끝 -->
@@ -223,6 +224,7 @@
 					<h5 style="text-align: left;">Copyright &copy; 2018-2019
 						HEESANG All Rights Reserved.</h5>
 				</div>
+				
 				<div class="col-sm-12"><hr></div>
 					<div class="col-sm-12">
 					<h4 style="text-align: centar;">
@@ -231,8 +233,7 @@
 						(주)비전소프트웨어(123-456) 서울시 금천구 가산동 426-5 월드메르디앙 2차 311호 5강의실
 						<br> 비전주식회사 대표이사 황희상 사업자등록번호 123-456-78910 대표번호:010-423-9948
 					</h4>
-				    </div>
-					<!--    <div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok">&nbsp; by 현석</span></h4> -->
+				</div>
 				</div>
 			</div>
 	</footer>

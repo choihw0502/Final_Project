@@ -51,10 +51,6 @@
 	<!-- 컨트롤계층의 클래스를 url로 요청하기 위해서는 반드시 component-scan태그에 패키지 등록할수 있다. 등록된 패키지만 찾아준다.-->
 		
 	<mybatis:scan base-package="com.mybatis.mapper"/>
-	<mvc:resources location="/images/" mapping="/images/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>
-	<mvc:resources location="/demo/" mapping="/demo/**"/>
-	<mvc:resources location="/themes/" mapping="/themes/**"/>
 	<mvc:resources location="/UI/" mapping="/UI/js/**"/>
 	<mvc:resources location="/UI/" mapping="/UI/fonts/**"/>
 	<mvc:resources location="/UI/" mapping="/UI/css/**"/>

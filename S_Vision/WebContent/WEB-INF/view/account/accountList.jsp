@@ -10,7 +10,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../../../common/easyui_common.jsp" %>
 <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 <style type="text/css">
 .font-size-5{

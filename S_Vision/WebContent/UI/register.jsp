@@ -107,7 +107,6 @@ html, body {
 							<img src="images/vision.png" id="imagepreview"
 								style="width: 150px; height: 30px">계정 만들기
 						</h6>
-
 						<p class="center">지금 바로 가입해 보세요!</p>
 					</div>
 				</div>

@@ -10,58 +10,45 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
-
 <style type="text/css">
       body {
          display: table-cell;
          vertical-align: middle;
          background-color: #e0f2f1 !important;
       }
-      
       html {
          display: table;
          margin: auto;
       }
-      
       html, body {
          height: 100%;
       }
-      
       .medium-small {
          font-size: 0.9rem;
          margin: 0;
          padding: 0;
       }
-      
       .login-form {
          width: 280px;
       }
-      
       .login-form-text {
          text-transform: uppercase;
          letter-spacing: 2px;
          font-size: 0.8rem;
       }
-      
       .login-text {
          margin-top: -6px;
          margin-left: -6px !important;
       }
-      
       .margin {
          margin: 0 !important;
       }
-      
       .pointer-events {
          pointer-events: auto !important;
       }
-      
       .input-field>.material-icons {
          padding-top: 10px;
       }
-      
       .input-field div.error {
          position: relative;
          top: -1rem;
@@ -107,13 +94,11 @@
               <label for="test6" class="pointer-events">아이디 기억하기</label>
           </div>
         </div>
-        
         <div class="row">
           <div class="input-field col s12">
             <button type="submit" class="btn waves-effect waves-light col s12">로그인</button>
           </div>
         </div>
-        
         <div class="row">
           <div class="input-field col s12 " >
             <p class="margin center-align medium-small" >         
