@@ -28,6 +28,7 @@ import com.vo.RewardsVO;
 @RequestMapping(value="/rewards/")
 public class RewardsController {
 	Logger logger = Logger.getLogger(RewardsController.class);
+	@Autowired
 	RewardsLogic rewardsLogic = null;
 	public void setRewardsLogic(RewardsLogic rewardsLogic) {
 		this.rewardsLogic = rewardsLogic;
@@ -37,9 +38,12 @@ public class RewardsController {
 		//insert here
 		//메소드이름으로 알맞게 타입정하고		
 		//메소드이름=로직.같은이름메소드(VO);
+		rewardsVO.setMem_id(req.getParameter("mem_id"));
+		int myPoint = 0;
+		myPoint = rewardsLogic.myPoint(rewardsVO);
 		
 		ModelAndView mav = new ModelAndView();
-		//mav.addObject("myPoint", myPoint);
+		mav.addObject("myPoint", myPoint);
 		mav.setViewName("rewards/myPoint");
 		return mav;
 	}
