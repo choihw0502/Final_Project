@@ -12,22 +12,13 @@
 	<bean id="accountLogic" class="com.account.AccountLogic">
 		<property name="accountDao" ref="accountDao"/>
 	</bean>
-	<bean class="com.card.CardLogic" id="cardlogic">
+	<bean id="cardLogic" class="com.card.CardLogic">
 		<property name="cardDao" ref="cardDao"/>
-	</bean>	
-	<bean class="com.member.MemberLogic" id="memberLogic">
+	</bean>
+	<bean id="memberLogic" class="com.member.MemberLogic">
 		<property name="memberDao" ref="memberDao"/>
-	</bean>	
-	<bean class="com.membership.membershipLogic" id="membershipLogic">
-		<property name="membershipDao" ref="membershipDao"/>
-	</bean>	
-	<bean class="com.plan.PlanLogic" id="planLogic">
-		<property name="planDao" ref="planDao"/>
-	</bean>	
-	<bean class="com.recommend.RecommendLogic" id="recommendLogic">
-		<property name="recommendDao" ref="recommendDao"/>
-	</bean>	
-	<bean class="com.rewards.RewardsLogic" id="rewardsLogic">
+	</bean>
+	<bean id="rewardsLogic" class="com.rewards.RewardsLogic">
 		<property name="rewardsDao" ref="rewardsDao"/>
-	</bean>	
+	</bean>					
 </beans>

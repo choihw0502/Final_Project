@@ -10,7 +10,6 @@ import com.member.MemberLogic;
 
 public class CardLogic {
 	Logger logger = Logger.getLogger(CardLogic.class);
-	@Autowired
 	CardDao cardDao = null;
 	public void setCardDao(CardDao cardDao) {
 		this.cardDao = cardDao;

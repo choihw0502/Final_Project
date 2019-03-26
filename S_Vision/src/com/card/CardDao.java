@@ -21,7 +21,6 @@ import com.vo.RecommendVO;
 
 public class CardDao {
 	Logger logger = Logger.getLogger(CardDao.class);
-	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate = null;
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;

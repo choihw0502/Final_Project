@@ -15,7 +15,6 @@ import com.util.MyBatisCommonFactory;
 
 public class MembershipDao {
 	Logger logger = Logger.getLogger(MembershipDao.class);
-	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate = null;
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;

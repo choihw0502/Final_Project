@@ -35,15 +35,6 @@
 	<bean id="memberDao" class="com.member.MemberDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
-	<bean id="membershipDao" class="com.membership.MembershipDao">
-		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
-	</bean>
-	<bean id="planDao" class="com.plan.PlanDao">
-		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
-	</bean>
-	<bean id="recommendDao" class="com.recommend.RecommendDao">
-		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
-	</bean>
 	<bean id="rewardsDao" class="com.rewards.RewardsDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>

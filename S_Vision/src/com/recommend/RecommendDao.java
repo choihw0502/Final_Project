@@ -20,7 +20,6 @@ import com.vo.RecommendVO;
 
 public class RecommendDao {
 	Logger logger = Logger.getLogger(RecommendDao.class);
-	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate = null;
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;

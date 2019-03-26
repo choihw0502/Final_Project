@@ -27,7 +27,6 @@ import com.vo.CardVO;
 @RequestMapping(value="/card/")
 public class CardController {
 	Logger logger = Logger.getLogger(CardController.class);
-	@Autowired
 	CardLogic cardLogic = null;
 	public void setCardLogic(CardLogic cardLogic) {
 		this.cardLogic = cardLogic;
@@ -39,7 +38,7 @@ public class CardController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("cardList", cardList);
+		//mav.addObject("cardList", cardList);
 		mav.setViewName("card/cardList");
 		return mav;
 	}
@@ -50,7 +49,7 @@ public class CardController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("cardUseList", cardUseList);
+		//mav.addObject("cardUseList", cardUseList);
 		mav.setViewName("card/cardUseList");
 		return mav;
 	}
@@ -61,7 +60,7 @@ public class CardController {
 		//메소드이름=로직.같은이름메소드(VO or 본인이 정해서);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("cardAdd", cardAdd);
+		//mav.addObject("cardAdd", cardAdd);
 		mav.setViewName("card/cardAdd");
 		return mav;
 	}

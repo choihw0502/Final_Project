@@ -14,7 +14,6 @@ import com.util.MyBatisCommonFactory;
 
 public class PlanDao {
 	Logger logger = Logger.getLogger(PlanDao.class);
-	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate = null;
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		this.sqlSessionTemplate = sqlSessionTemplate;
