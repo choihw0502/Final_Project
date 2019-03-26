@@ -29,12 +29,4 @@
 		<servlet-name>spring4MVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>testServlet</servlet-name>
-		<servlet-class>com.web.TestServlet</servlet-class>	
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>testServlet</servlet-name>
-		<url-pattern>/test.do</url-pattern>
-	</servlet-mapping>
 </web-app>
