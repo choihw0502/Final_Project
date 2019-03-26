@@ -26,7 +26,6 @@ import com.vo.CardVO;
 @RequestMapping(value="/member/")
 public class MemberController {
 	Logger logger = Logger.getLogger(MemberController.class);
-	@Autowired
 	MemberLogic memberLogic = null;
 	public void setMemberLogic(MemberLogic memberLogic) {
 		this.memberLogic = memberLogic;

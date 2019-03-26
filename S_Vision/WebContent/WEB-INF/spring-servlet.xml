@@ -35,19 +35,10 @@
 	</bean>	
 	<bean id="memberController" class="com.member.MemberController">
 		<property name="memberLogic" ref="memberLogic"/>
-	</bean>	
-	<bean id="membershipContoller" class="com.membership.MembershipController">
-		<property name="membershipLogic" ref="membershipLogic"/>
-	</bean>	
-	<bean id="planContoller" class="com.plan.PlanController">
-		<property name="planLogic" ref="planLogic"/>
-	</bean>	
-	<bean id="recommendController" class="com.recommend.RecommendController">
-		<property name="recommendLogic" ref="recommendLogic"/>
-	</bean>	
+	</bean>
 	<bean id="rewardsController" class="com.rewards.RewardsController">
 		<property name="rewardsLogic" ref="rewardsLogic"/>
-	</bean>		
+	</bean>				
 	<!-- 컨트롤계층의 클래스를 url로 요청하기 위해서는 반드시 component-scan태그에 패키지 등록할수 있다. 등록된 패키지만 찾아준다.-->
 		
 	<mybatis:scan base-package="com.mybatis.mapper"/>

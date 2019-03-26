@@ -28,7 +28,6 @@ import com.vo.RewardsVO;
 @RequestMapping(value="/rewards/")
 public class RewardsController {
 	Logger logger = Logger.getLogger(RewardsController.class);
-	@Autowired
 	RewardsLogic rewardsLogic = null;
 	public void setRewardsLogic(RewardsLogic rewardsLogic) {
 		this.rewardsLogic = rewardsLogic;
@@ -40,7 +39,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("myPoint", myPoint);
+		//mav.addObject("myPoint", myPoint);
 		mav.setViewName("rewards/myPoint");
 		return mav;
 	}
@@ -51,7 +50,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("exCoupon", exCoupon);
+		//mav.addObject("exCoupon", exCoupon);
 		mav.setViewName("rewards/exCoupon");
 		return mav;
 	}
@@ -62,7 +61,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("recentPoint", recentPoint);
+		//mav.addObject("recentPoint", recentPoint);
 		mav.setViewName("rewards/recentPoint");
 		return mav;
 	}
@@ -73,7 +72,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("removePoint", removePoint);
+		//mav.addObject("removePoint", removePoint);
 		mav.setViewName("rewards/removePoint");
 		return mav;
 	}
@@ -84,7 +83,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("myPoint", myCoupon);
+		//mav.addObject("myPoint", myCoupon);
 		mav.setViewName("rewards/myCoupon");
 		return mav;
 	}
@@ -95,7 +94,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("couponShop", couponShop);
+		//mav.addObject("couponShop", couponShop);
 		mav.setViewName("rewards/couponShop");
 		return mav;
 	}
@@ -106,7 +105,7 @@ public class RewardsController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pointSave", pointSave);
+		//mav.addObject("pointSave", pointSave);
 		mav.setViewName("rewards/pointSave");
 		return mav;
 	}

@@ -27,7 +27,6 @@ import com.vo.RecommendVO;
 @RequestMapping(value="/recommend/")
 public class RecommendController {
 	Logger logger = Logger.getLogger(RecommendController.class);
-	@Autowired
 	RecommendLogic recommendLogic = null;
 	public void setRecommendLogic(RecommendLogic recommendLogic) {
 		this.recommendLogic = recommendLogic;
@@ -39,7 +38,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("allCards", allCards);
+		//mav.addObject("allCards", allCards);
 		mav.setViewName("recommend/allCards");
 		return mav;
 	}
@@ -50,7 +49,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("eatCard", eatCard);
+		//mav.addObject("eatCard", eatCard);
 		mav.setViewName("recommend/eatCard");
 		return mav;
 	}
@@ -61,7 +60,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("communityCard", communityCard);
+		//mav.addObject("communityCard", communityCard);
 		mav.setViewName("recommend/communityCard");
 		return mav;
 	}
@@ -72,7 +71,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("cultureCard", cultureCard);
+		//mav.addObject("cultureCard", cultureCard);
 		mav.setViewName("recommend/cultureCard");
 		return mav;
 	}
@@ -83,7 +82,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("tripCard", tripCard);
+		//mav.addObject("tripCard", tripCard);
 		mav.setViewName("recommend/tripCard");
 		return mav;
 	}
@@ -94,7 +93,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("convenCard", convenCard);
+		//mav.addObject("convenCard", convenCard);
 		mav.setViewName("recommend/convenCard");
 		return mav;
 	}
@@ -105,7 +104,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("oilCard", oilCard);
+		//mav.addObject("oilCard", oilCard);
 		mav.setViewName("recommend/oilCard");
 		return mav;
 	}
@@ -116,7 +115,7 @@ public class RecommendController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("myRecommendCard", myRecommendCard);
+		//mav.addObject("myRecommendCard", myRecommendCard);
 		mav.setViewName("recommend/myRecommendCard");
 		return mav;
 	}

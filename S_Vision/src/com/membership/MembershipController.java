@@ -27,7 +27,6 @@ import com.vo.MembershipVO;
 @RequestMapping(value="/membership/")
 public class MembershipController {
 	Logger logger = Logger.getLogger(MembershipController.class);
-	@Autowired
 	MembershipLogic membershipLogic = null;
 	public void setMembershipLogic(MembershipLogic membershipLogic) {
 		this.membershipLogic = membershipLogic;
@@ -39,7 +38,7 @@ public class MembershipController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mshipList", mshipList);
+		//mav.addObject("mshipList", mshipList);
 		mav.setViewName("membership/mshipList");
 		return mav;
 	}
@@ -50,7 +49,7 @@ public class MembershipController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mshipHistory", mshipHistory);
+		//mav.addObject("mshipHistory", mshipHistory);
 		mav.setViewName("membership/mshipHistory");
 		return mav;
 	}
@@ -61,7 +60,7 @@ public class MembershipController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mshipAdd", mshipAdd);
+		//mav.addObject("mshipAdd", mshipAdd);
 		mav.setViewName("membership/mshipAdd");
 		return mav;
 	}
@@ -72,7 +71,7 @@ public class MembershipController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mshipBenefit", mshipBenefit);
+		//mav.addObject("mshipBenefit", mshipBenefit);
 		mav.setViewName("membership/mshipBenefit");
 		return mav;
 	}

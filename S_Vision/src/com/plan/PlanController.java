@@ -27,7 +27,6 @@ import com.vo.PlanVO;
 @RequestMapping(value="/plan/")
 public class PlanController {
 	Logger logger = Logger.getLogger(PlanController.class);
-	@Autowired
 	PlanLogic planLogic = null;
 	public void setPlanLogic(PlanLogic planLogic) {
 		this.planLogic = planLogic;
@@ -39,7 +38,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("spendingMonth", spendingMonth);
+		//mav.addObject("spendingMonth", spendingMonth);
 		mav.setViewName("plan/spendingMonth");
 		return mav;
 	}
@@ -50,7 +49,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("spendingCategory", spendingCategory);
+		//mav.addObject("spendingCategory", spendingCategory);
 		mav.setViewName("plan/spendingCategory");
 		return mav;
 	}
@@ -61,7 +60,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("payMethod", payMethod);
+		//mav.addObject("payMethod", payMethod);
 		mav.setViewName("plan/payMethod");
 		return mav;
 	}
@@ -72,7 +71,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("spendingStore", spendingStore);
+		//mav.addObject("spendingStore", spendingStore);
 		mav.setViewName("plan/spendingStore");
 		return mav;
 	}
@@ -83,7 +82,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("total_Month", total_Month);
+		//mav.addObject("total_Month", total_Month);
 		mav.setViewName("plan/total_Month");
 		return mav;
 	}
@@ -94,7 +93,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("total_Week", total_Week);
+		//mav.addObject("total_Week", total_Week);
 		mav.setViewName("plan/total_Week");
 		return mav;
 	}
@@ -105,7 +104,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("total_Day", total_Day);
+		//mav.addObject("total_Day", total_Day);
 		mav.setViewName("plan/total_Day");
 		return mav;
 	}
@@ -116,7 +115,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("spendingList", spendingList);
+		//mav.addObject("spendingList", spendingList);
 		mav.setViewName("plan/spendingList");
 		return mav;
 	}
@@ -127,7 +126,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("total_Budget", total_Budget);
+		//mav.addObject("total_Budget", total_Budget);
 		mav.setViewName("plan/total_Budget");
 		return mav;
 	}
@@ -138,7 +137,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("card_Budget", card_Budget);
+		//mav.addObject("card_Budget", card_Budget);
 		mav.setViewName("plan/card_Budget");
 		return mav;
 	}
@@ -149,7 +148,7 @@ public class PlanController {
 		//메소드이름=로직.같은이름메소드(VO);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("otherUsersSpending", otherUsersSpending);
+		//mav.addObject("otherUsersSpending", otherUsersSpending);
 		mav.setViewName("plan/otherUsersSpending");
 		return mav;
 	}
