@@ -83,7 +83,6 @@ public class AccountController {
 		mav.setViewName("account/accountAdd");
 		//path = "forward:./accountList.jsp";
 		return mav;
-		//return path;
 	}
 		
 
